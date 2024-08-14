@@ -53,33 +53,15 @@
 <body>
       <div class="login-container">
         <h1>Welcome to ePNR</h1>
-        <form id="loginForm" action="${url.loginAction}" method="post" >
+        <form action="${url.loginAction}" method="post" >
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
     </div>
       <script>
-       document.addEventListener("DOMContentLoaded", function() {
-            const loginForm = document.getElementById('loginForm');
-            
-            if (loginForm) {
-                loginForm.addEventListener('submit', function(event) {
-                    const originalURL = window.location.href; // 提交前的 URL
-                    
-                    setTimeout(function() {
-                        const currentURL = window.location.href; // 提交后的 URL
-
-                        if (originalURL === currentURL) {
-                            // 如果 URL 没有变化，说明登录失败
-                            alert("Login failed. Please check your credentials and try again.");
-                        }
-                    }, 1000); // 检查提交后的 URL 是否变化，1秒钟后检查
-                });
-            } else {
-                console.error("Could not find the form with id 'loginForm'.");
-            }
-        });
+          const urlParams = new URLSearchParams(window.location.search);
+          console.log("urlParams");
     </script>
 </body>
 </html>
