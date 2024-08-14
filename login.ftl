@@ -61,6 +61,7 @@
     </div>
     <script>
     console.log("Captured error type:");
+     alert("123");
     </script>
 </body>
 </html>
