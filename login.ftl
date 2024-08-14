@@ -58,6 +58,13 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
+ <div style="color: red;">
+        <#if errorType??>
+            Error Type: ${errorType}
+        <#else>
+            No error type provided.
+        </#if>
+    </div>
     </div>
     <script>
           // 获取 URL 中的查询参数
