@@ -60,17 +60,25 @@
         </form>
     </div>
       <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            const originalURL = window.location.href; // 提交前的 URL
+       document.addEventListener("DOMContentLoaded", function() {
+            const loginForm = document.getElementById('loginForm');
             
-            setTimeout(function() {
-                const currentURL = window.location.href; // 提交后的 URL
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    const originalURL = window.location.href; // 提交前的 URL
+                    
+                    setTimeout(function() {
+                        const currentURL = window.location.href; // 提交后的 URL
 
-                if (originalURL === currentURL) {
-                    // 如果 URL 没有变化，说明登录失败
-                    alert("Login failed. Please check your credentials and try again.");
-                }
-            }, 1000); // 检查提交后的 URL 是否变化，1秒钟后检查
+                        if (originalURL === currentURL) {
+                            // 如果 URL 没有变化，说明登录失败
+                            alert("Login failed. Please check your credentials and try again.");
+                        }
+                    }, 1000); // 检查提交后的 URL 是否变化，1秒钟后检查
+                });
+            } else {
+                console.error("Could not find the form with id 'loginForm'.");
+            }
         });
     </script>
 </body>
