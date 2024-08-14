@@ -77,6 +77,5 @@
             alert(errorMessage);
         }
     </script>
-</#if>
 </body>
 </html>
