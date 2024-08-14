@@ -36,7 +36,7 @@
             color: #fff;
         }
         .login-container button {
-            width: 30px;
+            width: calc(100% - 20px);
             padding: 10px;
             border: none;
             border-radius: 5px;
@@ -56,7 +56,7 @@
         <form action="${url.loginAction}" method="post">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <button type="submit">Sign in</button>
         </form>
     </div>
 </body>
