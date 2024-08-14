@@ -58,6 +58,7 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
+     <div style="color: red;">Error: ${error!}</div>
     </div>
 <#if errorMessage?exists && errorMessage?has_content>
     <script>
