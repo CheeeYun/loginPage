@@ -60,8 +60,10 @@
         </form>
     </div>
     <script>
+    const urlParams = new URLSearchParams(window.location.search);
+      
+    console.log(urlParams);
     console.log("Captured error type:");
-     alert("123");
     </script>
 </body>
 </html>
