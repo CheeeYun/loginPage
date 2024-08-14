@@ -36,7 +36,7 @@
             color: #fff;
         }
         .login-container button {
-            width: 100px;
+            width: calc(60% - 20px);
             padding: 10px;
             border: none;
             border-radius: 5px;
