@@ -53,7 +53,7 @@
 <body>
       <div class="login-container">
         <h1>Welcome to ePNR</h1>
-        <form action="${url.loginAction}" method="post">
+        <form action="${url.loginAction}" method="post" onsubmit="return showAlert()">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
@@ -61,15 +61,9 @@
     </div>
 <#if errorMessage?exists && errorMessage?has_content>
     <script>
-        var customMessage = "${errorMessage}";
-        
-        // 自定義錯誤消息
-        if (customMessage == "invalid_credentials") {
-            alert("Invalid username or password. Please try again.");
-        } else if (customMessage == "account_locked") {
-            alert("Your account has been locked. Please contact support.");
-        } else {
-            alert(customMessage);  // 默認訊息
+      function showAlert() {
+            alert("This is a test alert before submitting the form.");
+            return true;  // 返回 true 以继续提交表单
         }
     </script>
 </#if>
