@@ -59,19 +59,23 @@
             <button type="submit">Sign in</button>
         </form>
     </div>
-<#if errorMessage?exists && errorMessage?has_content>
-    <script>
-        var customMessage = "${errorMessage}";
-        
-        // 自定義錯誤消息
-        if (customMessage == "invalid_credentials") {
-            alert("Invalid username or password. Please try again.");
-        } else if (customMessage == "account_locked") {
-            alert("Your account has been locked. Please contact support.");
-        } else {
-            alert(customMessage);  // 默認訊息
-        }
-    </script>
-</#if>
+<#if error?exists && error?has_content>
+        <script>
+            let errorMessage = "";
+            <#if error == "user_not_found">
+                errorMessage = "User not found. Please check your username.";
+            </#if>
+            <#if error == "expired_code">
+                errorMessage = "Your session has expired. Please try again.";
+            </#if>
+            <#if error == "invalid_credentials">
+                errorMessage = "Invalid credentials. Please check your username and password.";
+            </#if>
+            // 添加更多的错误处理条件
+            if (errorMessage) {
+                alert(errorMessage);
+            }
+        </script>
+    </#if>
 </body>
 </html>
