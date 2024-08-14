@@ -59,5 +59,11 @@
             <button type="submit">Sign in</button>
         </form>
     </div>
+  <!-- JavaScript for error message alert -->
+    <#if errorMessage?exists && errorMessage?has_content>
+        <script>
+            alert("${errorMessage}");
+        </script>
+    </#if>
 </body>
 </html>
