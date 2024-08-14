@@ -53,29 +53,18 @@
 <body>
     <div class="login-container">
         <h1>Welcome to ePNR</h1>
-        <form action="${url.loginAction}" method="post">
-            <input type="text" name="username" placeholder="Username" required>
+        <form id="loginForm" action="${url.loginAction}" method="post" onsubmit="return showAlert()">
+            <input type="text" name="username" placeholder="Username" value="${username}" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
     </div>
-<#if error?exists && error?has_content>
-        <script>
-            let errorMessage = "";
-            <#if error == "user_not_found">
-                errorMessage = "User not found. Please check your username.";
-            </#if>
-            <#if error == "expired_code">
-                errorMessage = "Your session has expired. Please try again.";
-            </#if>
-            <#if error == "invalid_credentials">
-                errorMessage = "Invalid credentials. Please check your username and password.";
-            </#if>
-            // 添加更多的错误处理条件
-            if (errorMessage) {
-                alert(errorMessage);
-            }
-        </script>
-    </#if>
+
+    <script>
+        function showAlert() {
+            alert("This is a test alert before submitting the form.");
+            return true;  // 返回 true 以继续提交表单
+        }
+    </script>
 </body>
 </html>
