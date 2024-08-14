@@ -53,18 +53,28 @@
 <body>
       <div class="login-container">
         <h1>Welcome to ePNR</h1>
-        <form action="${url.loginAction}" method="post" onsubmit="return showAlert()">
+        <form action="${url.loginAction}" method="post" >
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
-     <div style="color: red;">Error: ${error!}</div>
     </div>
-<#if errorMessage?exists && errorMessage?has_content>
     <script>
-      function showAlert() {
-            alert("This is a test alert before submitting the form.");
-            return true;  // 返回 true 以继续提交表单
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+
+        if (error) {
+            let errorMessage = "";
+
+            if (error === "user_not_found") {
+                errorMessage = "User not found. Please check your username.";
+            } else if (error === "invalid_credentials") {
+                errorMessage = "Invalid credentials. Please check your username and password.";
+            } else {
+                errorMessage = "An unknown error occurred.";
+            }
+
+            alert(errorMessage);
         }
     </script>
 </#if>
