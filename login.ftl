@@ -59,13 +59,19 @@
             <button type="submit">Sign in</button>
         </form>
     </div>
-    <script>
-  const usernameField = document.querySelector('input[name="username"]');
-        
-        if (usernameField.value) {
-            // 如果用户名字段有值，但页面仍然是登录页面，说明登录失败
-            alert("Login failed. Please check your credentials and try again.");
-        }
+      <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            const originalURL = window.location.href; // 提交前的 URL
+            
+            setTimeout(function() {
+                const currentURL = window.location.href; // 提交后的 URL
+
+                if (originalURL === currentURL) {
+                    // 如果 URL 没有变化，说明登录失败
+                    alert("Login failed. Please check your credentials and try again.");
+                }
+            }, 1000); // 检查提交后的 URL 是否变化，1秒钟后检查
+        });
     </script>
 </body>
 </html>
