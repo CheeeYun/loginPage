@@ -53,7 +53,7 @@
 <body>
       <div class="login-container">
         <h1>Welcome to ePNR</h1>
-        <form action="${url.loginAction}" method="post" >
+        <form id="loginForm" action="${url.loginAction}" method="post" >
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
