@@ -59,11 +59,19 @@
             <button type="submit">Sign in</button>
         </form>
     </div>
-  <!-- JavaScript for error message alert -->
-    <#if errorMessage?exists && errorMessage?has_content>
-        <script>
-            alert("${errorMessage}");
-        </script>
-    </#if>
+<#if errorMessage?exists && errorMessage?has_content>
+    <script>
+        var customMessage = "${errorMessage}";
+        
+        // 自定義錯誤消息
+        if (customMessage == "invalid_credentials") {
+            alert("Invalid username or password. Please try again.");
+        } else if (customMessage == "account_locked") {
+            alert("Your account has been locked. Please contact support.");
+        } else {
+            alert(customMessage);  // 默認訊息
+        }
+    </script>
+</#if>
 </body>
 </html>
