@@ -60,22 +60,31 @@
         </form>
     </div>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const error = urlParams.get('error');
+          // 获取 URL 中的查询参数
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorType = urlParams.get('error');
+    const errorDescription = urlParams.get('error_description'); // 有时可能带有详细描述
 
-        if (error) {
-            let errorMessage = "";
+    console.log("Captured error type:", errorType);
+    console.log("Captured error description:", errorDescription);
 
-            if (error === "user_not_found") {
-                errorMessage = "User not found. Please check your username.";
-            } else if (error === "invalid_credentials") {
-                errorMessage = "Invalid credentials. Please check your username and password.";
-            } else {
-                errorMessage = "An unknown error occurred.";
-            }
+    // 检查并显示错误信息
+    if (errorType) {
+        let errorMessage = "An error occurred.";
 
-            alert(errorMessage);
+        if (errorType === "user_not_found") {
+            errorMessage = "User not found. Please check your username.";
+        } else if (errorType === "invalid_credentials") {
+            errorMessage = "Invalid credentials. Please check your username and password.";
+        } else if (errorType === "expired_code") {
+            errorMessage = "Your session has expired. Please try again.";
+        } else {
+            errorMessage = `Error: ${errorType}`;
         }
+
+        console.log("Final error message:", errorMessage);
+        alert(errorMessage);
+    }
     </script>
 </body>
 </html>
