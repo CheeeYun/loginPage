@@ -60,10 +60,12 @@
         </form>
     </div>
     <script>
-    const urlParams = new URLSearchParams(window.location.search);
-      
-    console.log(urlParams);
-    console.log("Captured error type:");
+  const usernameField = document.querySelector('input[name="username"]');
+        
+        if (usernameField.value) {
+            // 如果用户名字段有值，但页面仍然是登录页面，说明登录失败
+            alert("Login failed. Please check your credentials and try again.");
+        }
     </script>
 </body>
 </html>
