@@ -58,40 +58,9 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
- <div style="color: red;">
-        <#if errorType??>
-            Error Type: ${errorType}
-        <#else>
-            No error type provided.
-        </#if>
-    </div>
     </div>
     <script>
-          // 获取 URL 中的查询参数
-    const urlParams = new URLSearchParams(window.location.search);
-    const errorType = urlParams.get('error');
-    const errorDescription = urlParams.get('error_description'); // 有时可能带有详细描述
-
-    console.log("Captured error type:", errorType);
-    console.log("Captured error description:", errorDescription);
-
-    // 检查并显示错误信息
-    if (errorType) {
-        let errorMessage = "An error occurred.";
-
-        if (errorType === "user_not_found") {
-            errorMessage = "User not found. Please check your username.";
-        } else if (errorType === "invalid_credentials") {
-            errorMessage = "Invalid credentials. Please check your username and password.";
-        } else if (errorType === "expired_code") {
-            errorMessage = "Your session has expired. Please try again.";
-        } else {
-            errorMessage = `Error: ${errorType}`;
-        }
-
-        console.log("Final error message:", errorMessage);
-        alert(errorMessage);
-    }
+    console.log("Captured error type:");
     </script>
 </body>
 </html>
