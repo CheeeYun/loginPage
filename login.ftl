@@ -27,7 +27,7 @@
             color: #1abc9c;
         }
         .login-container input {
-            width: 30px;
+            width: calc(100% - 20px);
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -36,7 +36,7 @@
             color: #fff;
         }
         .login-container button {
-            width: calc(100% - 20px);
+            width: 30px;
             padding: 10px;
             border: none;
             border-radius: 5px;
