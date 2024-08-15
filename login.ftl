@@ -58,11 +58,18 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
+              <#-- 错误提示逻辑 -->
+        <#if message != "">
+            <div class="alert">
+                <#if message == "invalid_credentials">
+                    用户名或密码不正确，请重试。
+                <#elseif message == "account_disabled">
+                    账户已被禁用，请联系管理员。
+                <#else>
+                    登录失败，原因：${message}.
+                </#if>
+            </div>
+        </#if>
     </div>
- <#if login_failed??>
-    <script>
-        alert("Login failed: ${login_failed}");
-    </script>
-</#if>
 </body>
 </html>
