@@ -58,6 +58,14 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
+<div style="color: red;">
+    Available variables:
+    <ul>
+        <#list .vars as varName>
+            <li>${varName}: ${.vars[varName]!}</li>
+        </#list>
+    </ul>
+</div>
     </div>
       <script>
           const urlParams = new URLSearchParams(window.location.search);
