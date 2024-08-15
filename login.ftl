@@ -48,8 +48,8 @@
         .login-container button:hover {
             background-color: #16a085;
         }
-         .alert {
-            color: white;
+        .login-container .alert {
+            color: red;
         }
     </style>
 </head>
@@ -59,13 +59,13 @@
         <form action="${url.loginAction}" method="post" >
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
+         <#if message??>
+              <div class="alert">
+                 Something wrong with your Username or Password
+             </div>
+          </#if>
             <button type="submit">Sign in</button>
         </form>
-      <#if message??>
-          <div class="alert">
-             Something wrong with your Username or Password
-         </div>
-      </#if>
     </div>
 </body>
 </html>
