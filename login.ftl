@@ -52,22 +52,14 @@
 </head>
 <body>
       <div class="login-container">
-        <h1>Welcome to ePNR</h1>
+        <h1>Welcome to EPNR</h1>
         <form action="${url.loginAction}" method="post" >
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
         <#if message??>
-            <div class="alert">
-                <#if message == "invalid_credentials">
-                    用户名或密码不正确，请重试。
-                <#elseif message == "account_disabled">
-                    账户已被禁用，请联系管理员。
-                <#else>
-                    登录失败，原因：${message}.
-                </#if>
-            </div>
+           alert("Something wrong with Username or Password");
         </#if>
     </div>
 </body>
