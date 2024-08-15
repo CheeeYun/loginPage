@@ -49,7 +49,7 @@
             background-color: #16a085;
         }
          .alert {
-            color: red;
+            color: white;
         }
     </style>
 </head>
