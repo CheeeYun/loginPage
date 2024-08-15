@@ -58,19 +58,11 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
-<div style="color: red;">
-    Available variables:
-    <ul>
-        <#assign varNames = .vars?keys>
-        <#list varNames as varName>
-            <li>${varName}: ${.vars[varName]!}</li>
-        </#list>
-    </ul>
-</div>
     </div>
-      <script>
-          const urlParams = new URLSearchParams(window.location.search);
-          console.log(urlParams);
+ <#if login_failed??>
+    <script>
+        alert("Login failed: ${login_failed}");
     </script>
+</#if>
 </body>
 </html>
