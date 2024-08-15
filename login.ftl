@@ -58,13 +58,11 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
-             <#-- 错误提示逻辑 -->
-        <#if messages.exists("error")>
-            <div class="alert">
-                <#-- 显示错误信息 -->
-                ${messages.get("error")}
-            </div>
-        </#if>
+         <#if authenticationMessages.exists("error")>
+    <div class="alert">
+        ${authenticationMessages.get("error")}
+    </div>
+</#if>
     </div>
 </body>
 </html>
