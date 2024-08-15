@@ -61,7 +61,8 @@
 <div style="color: red;">
     Available variables:
     <ul>
-        <#list .vars as varName>
+        <#assign varNames = .vars?keys>
+        <#list varNames as varName>
             <li>${varName}: ${.vars[varName]!}</li>
         </#list>
     </ul>
