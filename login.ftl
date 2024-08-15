@@ -49,7 +49,6 @@
             background-color: #16a085;
         }
          .alert {
-            background-color: #e74c3c;
             color: red;
         }
     </style>
