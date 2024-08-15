@@ -58,11 +58,11 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
         </form>
-        <#if message??>
+    </div>
+     <#if message??>
           <script>
            alert("Something wrong with Username or Password");
           </script>
         </#if>
-    </div>
 </body>
 </html>
