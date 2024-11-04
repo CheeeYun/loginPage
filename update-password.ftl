@@ -56,6 +56,7 @@
     </style>
 </head>
 <body>
+     <#include "header.ftl">
     <div class="update-password-container">
         <h1>Update Your Password</h1>
         <form action="${url.changePasswordAction}" method="post">
@@ -69,5 +70,6 @@
             <button type="submit">Update Password</button>
         </form>
     </div>
+<#include "footer.ftl">
 </body>
 </html>
