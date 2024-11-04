@@ -1,4 +1,4 @@
-<#include "header.ftl">
+
 <div style="font-family: Arial, sans-serif; background-color: #202020; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
     <div style="background-color: #333; padding: 40px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); width: 400px; text-align: center;">
         <h1 style="margin-bottom: 30px; color: #1abc9c;">Update Your Password</h1>
@@ -14,4 +14,4 @@
         </form>
     </div>
 </div>
-<#include "footer.ftl">
+
